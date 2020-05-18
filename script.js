@@ -7,7 +7,7 @@ snake[0] = {
   y: 8 * box,
 };
 
-let direction = "rigth";
+let direction = "right";
 
 function createBackground() {
   context.fillStyle = "#A9F5BC";
@@ -21,6 +21,16 @@ function createSnake() {
   }
 }
 
+document.addEventListener('keydown',update);
+
+function update(event){
+  if (event.keyCode == 37 && direction != "right") direction = "left";
+  if (event.keyCode == 38 && direction != "down") direction = "up";
+  if (event.keyCode == 39 && direction != "left") direction = "right";
+  if (event.keycode == 40 && direction != "up") direction = "down";
+  console.log(direction);
+}
+
 function startGame() {
   createBackground();
   createSnake();
@@ -28,7 +38,7 @@ function startGame() {
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  if (direction == "rigth") snakeX += box;
+  if (direction == "right") snakeX += box;
   if (direction == "left") snakeY -= box;
   if (direction == "up") snakeX -= box;
   if (direction == "down") snakeY += box;
