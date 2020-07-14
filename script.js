@@ -17,19 +17,25 @@ let food = {
 
 function createBackground() {
   context.fillStyle = "#A9F5BC";
-  context.fillRect(0, 0, 16 * box, 16 * box);
+  context.fillRect(0, 0, 16 * box, 16 * box);  
 }
 
 function createSnake() {
   for (i = 0; i < snake.length; i++) {
-    context.fillStyle = "#243B0B";
+    context.lineWidth = 2;
+    context.fillStyle = "#8FBC8F";
+    context.strokeStyle = "#2E8B57";    
     context.fillRect(snake[i].x, snake[i].y, box, box);
+    context.strokeRect(snake[i].x, snake[i].y, box, box);
   }
 }
 
 function drawFood() {
+  context.lineWidth = 2;
   context.fillStyle = "#ff8080";
+  context.strokeStyle = "#A52A2A";
   context.fillRect(food.x, food.y, box, box);
+  context.strokeRect(food.x, food.y, box, box);
 }
 
 document.addEventListener("keydown", update);
