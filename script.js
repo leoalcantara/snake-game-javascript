@@ -1,5 +1,6 @@
 let canvas = document.getElementById("gameCanvas");
 let context = canvas.getContext("2d");
+
 let box = 32;
 let speed = 500;
 let score = 0;
@@ -47,7 +48,6 @@ function update(event) {
   if (event.keyCode == 39 && direction != "left") direction = "right";
   if (event.keyCode == 38 && direction != "down") direction = "up";
   if (event.keyCode == 40 && direction != "up") direction = "down";
-  //console.log(event.keyCode, direction);
 }
 
 function startGame() {
@@ -76,21 +76,18 @@ function startGame() {
   if (direction == "down") snakeY += box;
 
   if (snakeX != food.x || snakeY != food.y) {
-    snake.pop();
-    
+    snake.pop();    
   } else {
     food.x = Math.floor(Math.random() * 15 + 1) * box;
     food.y = Math.floor(Math.random() * 15 + 1) * box;
-    speed = speed -50;
-    //setInterval.speed = setInterval.speed - 10;
+    
     score ++;
     document.getElementById("score").innerHTML = "Score: " + score;
+
     if(score % 10 == 0){
       level ++;
       document.getElementById("level").innerHTML = "Level: " + level; 
-    }
-    console.log(score);
-    // console.log(speed);
+    }    
   }
 
   let newHead = {

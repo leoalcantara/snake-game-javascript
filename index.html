@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake - Game</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
-  </head>
+  </head> 
+
   <body>
     <div class="container">
-      <div class="screen">
+      <div class="screen">       
+        <div class="info">
+           <p id="score"> Score: 0 </p>  
+        </div>
         <div class="info">
           <p id="level"> Level: 1 </p>
-        </div>  
-      <div class="info">
-         <p id="score"> Score: 0 </p>  
-      </div>
-      
+        </div>       
     </div>
       <div class="game">
         <canvas id="gameCanvas" height="512" width="512"></canvas>
       </div>
-    </div>
-    
+    </div>    
   </body>
+
 </html>
