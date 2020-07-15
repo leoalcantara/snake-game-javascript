@@ -2,6 +2,8 @@ let canvas = document.getElementById("gameCanvas");
 let context = canvas.getContext("2d");
 let box = 32;
 let speed = 500;
+let score = 0;
+let level = 1;
 
 let snake = [];
 snake[0] = {
@@ -75,10 +77,20 @@ function startGame() {
 
   if (snakeX != food.x || snakeY != food.y) {
     snake.pop();
+    
   } else {
     food.x = Math.floor(Math.random() * 15 + 1) * box;
     food.y = Math.floor(Math.random() * 15 + 1) * box;
-    setInterval.speed = setInterval.speed - 10;
+    speed = speed -50;
+    //setInterval.speed = setInterval.speed - 10;
+    score ++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    if(score % 10 == 0){
+      level ++;
+      document.getElementById("level").innerHTML = "Level: " + level; 
+    }
+    console.log(score);
+    // console.log(speed);
   }
 
   let newHead = {
