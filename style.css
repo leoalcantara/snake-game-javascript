@@ -17,8 +17,9 @@ body {
 .container {
   border-style: solid;
   border-width: 5px ;
-  border-color: #2E8B57;
-  background: #A9F5BC;
+  border-color: #000;
+  /* border-color: #2E8B57; */
+  background: #AACC99;
   padding: 0;
   margin: 0;
 }
@@ -36,5 +37,5 @@ body {
 
 .game {
   display: flex;
-  border-top: 5px solid #2E8B57; 
+  border-top: 5px solid #000; 
 }

@@ -18,15 +18,15 @@ let food = {
 };
 
 function createBackground() {
-  context.fillStyle = "#A9F5BC";
+  context.fillStyle = "#AACC99";
   context.fillRect(0, 0, 16 * box, 16 * box);  
 }
 
 function createSnake() {
   for (i = 0; i < snake.length; i++) {
     context.lineWidth = 2;
-    context.fillStyle = "#8FBC8F";
-    context.strokeStyle = "#2E8B57";    
+    context.fillStyle = "#2E8B57";
+    context.strokeStyle = "#000";    
     context.fillRect(snake[i].x, snake[i].y, box, box);
     context.strokeRect(snake[i].x, snake[i].y, box, box);
   }
